@@ -1,3 +1,5 @@
+package model;
+
 import org.hibernate.annotations.Entity;
 
 import java.util.Date;

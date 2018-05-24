@@ -1,7 +1,9 @@
+package model;
+
 import org.hibernate.annotations.Entity;
 
 @Entity
-public class Kreditkarte implements Zahlung {
+public class Praemienmeilen implements Zahlung {
 
 
 	/**
