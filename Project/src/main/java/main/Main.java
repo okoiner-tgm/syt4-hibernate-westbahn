@@ -18,7 +18,7 @@ import javax.persistence.TypedQuery;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import model.*;
+// import model.*;
 
 public class Main {
 
@@ -37,7 +37,7 @@ public class Main {
 		log.setLevel(Level.ALL);
 		try {
 			log.info("Starting \"Mapping Perstistent Classes and Associations\" (task1)");
-			sessionFactory = Persistence.createEntityManagerFactory("westbahn");
+			sessionFactory = Persistence.createEntityManagerFactory("westbahnPU");
 			
 			fillDB(entitymanager);
 			task01();
@@ -45,6 +45,7 @@ public class Main {
 			task02a();
 			task02b();
 			task02c();
+			System.out.println("Hello");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
