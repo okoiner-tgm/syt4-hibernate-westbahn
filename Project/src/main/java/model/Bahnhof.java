@@ -1,10 +1,16 @@
 package model;
 
-import org.hibernate.annotations.Entity;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Bahnhof")
 public class Bahnhof {
 
+	@Id
+	@GeneratedValue
 	private Long ID;
 
 	private String name;

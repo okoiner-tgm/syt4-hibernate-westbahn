@@ -1,10 +1,13 @@
 package model;
 
-import org.hibernate.annotations.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 
 @Entity
 public class Einzelticket extends Ticket {
 
+	@Enumerated
 	private TicketOption ticketOption;
 
 }

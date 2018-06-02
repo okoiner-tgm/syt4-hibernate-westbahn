@@ -1,10 +1,15 @@
 package model;
 
-import org.hibernate.annotations.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Preisstaffelung {
 
+	@Id
+	@GeneratedValue
 	private static Long serialVersionUID;
 
 	private float grossGepaeck = 1.02f;

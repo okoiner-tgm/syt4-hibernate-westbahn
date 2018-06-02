@@ -1,13 +1,16 @@
 package model;
 
-import model.Bahnhof;
-import org.hibernate.annotations.Entity;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.Date;
 
 @Entity
 public class Zug {
 
+	@Id
+	@GeneratedValue
 	private Long ID;
 
 	private Date startZeit;
@@ -18,8 +21,10 @@ public class Zug {
 
 	private int rollStuhlPlaetze = 10;
 
+	@OneToOne
 	private Bahnhof start;
 
+	@OneToOne
 	private Bahnhof ende;
 
 }

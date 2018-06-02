@@ -1,13 +1,14 @@
 package model;
 
 import model.*;
-import org.hibernate.annotations.Entity;
 
+import javax.persistence.*;
 import java.util.Date;
-
 @Entity
 public class Reservierung {
 
+    @Id
+    @GeneratedValue
 	private Long ID;
 
 	private Date datum;
@@ -22,6 +23,8 @@ public class Reservierung {
 
 	private Strecke strecke;
 
+	@ManyToOne
+	@JoinColumn(name="benutzer_id")
 	private Benutzer benutzer;
 
 	private Zahlung zahlung;

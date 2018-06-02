@@ -1,6 +1,7 @@
 package model;
 
-import org.hibernate.annotations.Entity;
+
+import javax.persistence.Entity;
 
 @Entity
 public class Maestro implements Zahlung {
