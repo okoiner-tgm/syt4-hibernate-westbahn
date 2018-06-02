@@ -15,6 +15,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import model.Bahnhof;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -59,7 +60,11 @@ public class Main {
 	}
 	
 	public static void task01() throws ParseException, InterruptedException {
-		
+		EntityManager em = sessionFactory.createEntityManager();
+		em.getTransaction().begin();
+		Bahnhof b = new Bahnhof();
+		em.persist(b);
+		em.getTransaction().commit();
 		
 	}
 	public static void task02a() throws ParseException {
