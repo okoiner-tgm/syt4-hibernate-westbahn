@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.AssertTrue;
 import java.util.Date;
 
 @Entity
@@ -26,5 +27,11 @@ public class Zug {
 
 	@OneToOne
 	private Bahnhof ende;
+
+
+	@AssertTrue(message="Start- und Endbahnhof müssen unterschiedlich sein")
+	private boolean isValid() {
+		return !start.equals(ende);
+	}
 
 }

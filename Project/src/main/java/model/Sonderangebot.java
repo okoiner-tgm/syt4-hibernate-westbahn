@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import java.util.Date;
 
 @Entity
@@ -16,6 +18,7 @@ public class Sonderangebot {
 
 	private int kontingent = 999;
 
+	@FutureOrPresent(message = "Startzeit kann nicht in der Vergangenheit liegen")
 	private Date startZeit;
 
 	private int dauer = 12;

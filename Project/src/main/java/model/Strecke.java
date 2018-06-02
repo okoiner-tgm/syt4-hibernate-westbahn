@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.AssertTrue;
 
 @Entity
 public class Strecke {
@@ -21,5 +22,11 @@ public class Strecke {
 
 	@ManyToOne
 	private Bahnhof ende;
+
+
+	@AssertTrue(message="Start- und Endbahnhof müssen unterschiedlich sein")
+	private boolean isValid() {
+		return !start.equals(ende);
+	}
 
 }

@@ -1,8 +1,13 @@
 package model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
+@NamedQuery(
+		name="Benutzer.findAllWithMonatskarte",
+		query = "SELECT b FROM Benutzer b WHERE TYPE(b.tickets) = 'Zeitkarte'"
+)
 public class Benutzer {
 
 	@Id
@@ -13,6 +18,7 @@ public class Benutzer {
 
 	private String nachName;
 
+	@Email(message = "Email ungültig")
 	private String eMail;
 
 	private String passwort;
