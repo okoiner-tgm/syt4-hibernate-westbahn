@@ -22,15 +22,19 @@
 				<enumerated>STRING</enumerated>
 			</basic>
 
-			<many-to-one name="zug"/>
+			<many-to-one name="zug">
+				<join-column name="zug_id"/>
+			</many-to-one>
 
-            <many-to-one name="strecke"/>
+            <many-to-one name="strecke">
+                <join-column name="strecke_id"/>
+            </many-to-one>
 
 			<many-to-one name="benutzer">
 				<join-column name="benutzer_id"/>
 			</many-to-one>
 
-            <one-to-one name="zahlung"/>
+            <embedded name="zahlung"/>
 
 		</attributes>
 	</entity>

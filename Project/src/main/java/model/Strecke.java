@@ -18,6 +18,7 @@ public class Strecke {
 	@ManyToOne
 	private Bahnhof start;
 
+	@ManyToOne
 	private Bahnhof bahnhof;
 
 	@ManyToOne

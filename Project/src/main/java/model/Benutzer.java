@@ -2,11 +2,12 @@ package model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.List;
 
 @Entity
 @NamedQuery(
 		name="Benutzer.findAllWithMonatskarte",
-		query = "SELECT b FROM Benutzer b WHERE TYPE(b.tickets) = 'Zeitkarte'"
+		query = "SELECT b FROM Benutzer b, Ticket z WHERE b.tickets.typ = model.ZeitkartenTyp.MONATSKARTE"
 )
 public class Benutzer {
 
@@ -31,6 +32,6 @@ public class Benutzer {
 	private Ticket tickets;
 
 	@OneToMany(mappedBy = "benutzer")
-	private Reservierung[] reservierungen;
+	private List<Reservierung> reservierungen;
 
 }

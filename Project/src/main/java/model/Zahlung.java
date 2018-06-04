@@ -1,8 +1,9 @@
 package model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
-@Entity
+@Embeddable
 public interface Zahlung {
 
 	public void zahlungDurchfuehren();

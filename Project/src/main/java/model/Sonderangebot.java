@@ -1,10 +1,7 @@
 package model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.FutureOrPresent;
 import java.util.Date;
@@ -25,7 +22,7 @@ public class Sonderangebot {
 
 	private float preisNachlass = 0.5f;
 
-	@OneToMany
+	@OneToOne
 	private Ticket tickets;
 
 }
