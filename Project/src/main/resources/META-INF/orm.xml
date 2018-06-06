@@ -24,14 +24,17 @@
 
 			<many-to-one name="zug">
 				<join-column name="zug_id"/>
+				<cascade><cascade-persist/></cascade>
 			</many-to-one>
 
             <many-to-one name="strecke">
                 <join-column name="strecke_id"/>
+				<cascade><cascade-persist/></cascade>
             </many-to-one>
 
 			<many-to-one name="benutzer">
 				<join-column name="benutzer_id"/>
+				<cascade><cascade-persist/></cascade>
 			</many-to-one>
 
             <embedded name="zahlung"/>

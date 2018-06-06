@@ -26,4 +26,60 @@ public class Bahnhof {
 
 	private boolean kopfBahnhof;
 
+	public Bahnhof(){}
+	public Bahnhof(@Pattern(regexp = "^[a-zA-Z0-9 -]{2,150}$", message = "Bahnhofsname muss zwischen 2 und 150 Zeichen lang sein und darf abgesehen von \"-\" (Bindestrich)  keine Sonderzeichen enthalten") String name, int absPreisEntfernung, int absKmEntfernung, int absZeitEntfernung, boolean kopfBahnhof) {
+		this.name = name;
+		this.absPreisEntfernung = absPreisEntfernung;
+		this.absKmEntfernung = absKmEntfernung;
+		this.absZeitEntfernung = absZeitEntfernung;
+		this.kopfBahnhof = kopfBahnhof;
+	}
+
+	public Long getID() {
+		return ID;
+	}
+
+	public void setID(Long ID) {
+		this.ID = ID;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAbsPreisEntfernung() {
+		return absPreisEntfernung;
+	}
+
+	public void setAbsPreisEntfernung(int absPreisEntfernung) {
+		this.absPreisEntfernung = absPreisEntfernung;
+	}
+
+	public int getAbsKmEntfernung() {
+		return absKmEntfernung;
+	}
+
+	public void setAbsKmEntfernung(int absKmEntfernung) {
+		this.absKmEntfernung = absKmEntfernung;
+	}
+
+	public int getAbsZeitEntfernung() {
+		return absZeitEntfernung;
+	}
+
+	public void setAbsZeitEntfernung(int absZeitEntfernung) {
+		this.absZeitEntfernung = absZeitEntfernung;
+	}
+
+	public boolean isKopfBahnhof() {
+		return kopfBahnhof;
+	}
+
+	public void setKopfBahnhof(boolean kopfBahnhof) {
+		this.kopfBahnhof = kopfBahnhof;
+	}
 }
