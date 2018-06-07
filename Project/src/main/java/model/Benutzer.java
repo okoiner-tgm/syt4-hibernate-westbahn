@@ -3,6 +3,7 @@ package model;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.List;
+import java.util.Objects;
 
 import static javax.persistence.CascadeType.PERSIST;
 
@@ -32,6 +33,27 @@ public class Benutzer {
 
 	@OneToOne(cascade = PERSIST)
 	private Ticket tickets;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Benutzer)) return false;
+		Benutzer benutzer = (Benutzer) o;
+		return Objects.equals(ID, benutzer.ID) &&
+				Objects.equals(vorName, benutzer.vorName) &&
+				Objects.equals(nachName, benutzer.nachName) &&
+				Objects.equals(eMail, benutzer.eMail) &&
+				Objects.equals(passwort, benutzer.passwort) &&
+				Objects.equals(smsNummer, benutzer.smsNummer) &&
+				Objects.equals(verbuchtePraemienMeilen, benutzer.verbuchtePraemienMeilen) &&
+				Objects.equals(tickets, benutzer.tickets) &&
+				Objects.equals(reservierungen, benutzer.reservierungen);
+	}
+
+	@Override
+	public int hashCode() {
+		return 0;
+	}
 
 	@OneToMany(mappedBy = "benutzer",cascade = PERSIST)
 	private List<Reservierung> reservierungen;

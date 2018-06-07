@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
+import java.util.Objects;
 
 @Entity
 @Table(name="Bahnhof")
@@ -25,6 +26,24 @@ public class Bahnhof {
 	private int absZeitEntfernung;
 
 	private boolean kopfBahnhof;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Bahnhof)) return false;
+		Bahnhof bahnhof = (Bahnhof) o;
+		return absPreisEntfernung == bahnhof.absPreisEntfernung &&
+				absKmEntfernung == bahnhof.absKmEntfernung &&
+				absZeitEntfernung == bahnhof.absZeitEntfernung &&
+				kopfBahnhof == bahnhof.kopfBahnhof &&
+				Objects.equals(ID, bahnhof.ID) &&
+				Objects.equals(name, bahnhof.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return 0;
+	}
 
 	public Bahnhof(){}
 	public Bahnhof(@Pattern(regexp = "^[a-zA-Z0-9 -]{2,150}$", message = "Bahnhofsname muss zwischen 2 und 150 Zeichen lang sein und darf abgesehen von \"-\" (Bindestrich)  keine Sonderzeichen enthalten") String name, int absPreisEntfernung, int absKmEntfernung, int absZeitEntfernung, boolean kopfBahnhof) {

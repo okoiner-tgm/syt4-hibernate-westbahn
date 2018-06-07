@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import model.Bahnhof;
+import model.*;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -56,27 +56,42 @@ public class Main {
 	
 	public static void fillDB(EntityManager em) throws ParseException {
 		em = sessionFactory.createEntityManager();
-		
+
 	}
 	
 	public static void task01() throws ParseException, InterruptedException {
-		EntityManager em = sessionFactory.createEntityManager();
-		em.getTransaction().begin();
-		Bahnhof b = new Bahnhof();
-		em.persist(b);
-		em.getTransaction().commit();
-		
 	}
 	public static void task02a() throws ParseException {
-
+	    /*
+		EntityManager em = sessionFactory.createEntityManager();
+		Query q = em.createNamedQuery("Reservierung.findByEmail");
+		q.setParameter("email","astrasser@student.tgm.ac.at");
+		List<Reservierung> rs = q.getResultList();
+		System.out.println(rs.size());
+	     */
 	}
 
 	public static void task02b() throws ParseException {
-
+	    /*
+		EntityManager em = sessionFactory.createEntityManager();
+		Query q = em.createNamedQuery("Benutzer.findAllWithMonatskarte");
+		List<Benutzer> rs = q.getResultList();
+		System.out.println(rs.size());
+		for(Benutzer b: rs){
+			System.out.println(b.geteMail());
+		}
+	     */
 	}
 
 	public static void task02c() throws ParseException {
-
+	    /*
+		EntityManager em = sessionFactory.createEntityManager();
+		Query q = em.createNamedQuery("Ticket.findAllByStreckeWithoutReservierung");
+		q.setParameter("start","bhf1");
+		q.setParameter("ende","bhf3");
+		List<Ticket> rs = q.getResultList();
+		System.out.println(rs.size());
+	     */
 	}
 
 }

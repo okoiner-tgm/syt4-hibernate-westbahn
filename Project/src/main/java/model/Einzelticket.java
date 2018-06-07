@@ -15,4 +15,12 @@ public class Einzelticket extends Ticket {
 	    super(strecke,zahlung);
 	    this.ticketOption = ticketOption;
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Einzelticket)) return false;
+		Einzelticket that = (Einzelticket) o;
+		return ticketOption == that.ticketOption;
+	}
 }
