@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class PersistenceTests{
+public class PersistenceTest{
     private static EntityManagerFactory sessionFactory;
     private static EntityManager em;
     private Bahnhof bhf;

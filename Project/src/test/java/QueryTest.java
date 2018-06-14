@@ -14,7 +14,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class QueryTests{
+public class QueryTest {
     private static EntityManagerFactory sessionFactory;
     private static EntityManager em;
     @BeforeClass

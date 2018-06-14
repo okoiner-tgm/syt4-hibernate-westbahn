@@ -16,7 +16,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-public class ValidationTests{
+public class ValidationTest {
     private static EntityManagerFactory sessionFactory;
     private static EntityManager em;
 
