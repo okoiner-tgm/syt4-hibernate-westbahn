@@ -22,13 +22,11 @@ public class ValidationTests{
 
     public static <T> boolean isValid(T obj){
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory . getValidator ();
-        Set <ConstraintViolation<T>> violations = validator . validate (obj);
-
-        for ( ConstraintViolation <T> violation : violations ) {
+        Validator validator = factory.getValidator();
+        Set<ConstraintViolation<T>> violations = validator.validate(obj);
+        for(ConstraintViolation<T>violation : violations) {
             System.out.println(violation.getMessage());
         }
-
         return ((Set) violations).size()==0;
     }
 

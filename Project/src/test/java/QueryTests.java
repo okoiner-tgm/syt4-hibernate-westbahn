@@ -84,7 +84,7 @@ public class QueryTests{
             System.out.println(b.getBenutzer().geteMail());
             assertTrue(b.getBenutzer().geteMail().equals("v2n2@email.at"));
         }
-        assertTrue(true);
+        //assertTrue(true);
     }
 
     @Test
